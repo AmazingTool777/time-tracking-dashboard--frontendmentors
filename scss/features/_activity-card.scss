@@ -1,0 +1,145 @@
+@use "../functions" as fn;
+@use "../mixins";
+@use "../variables/responsive-design" as rd;
+
+.activity-card {
+  &--work {
+    --illustration-top: #{fn.px-to-rem(-6)};
+    --card-bg-color: var(--light-red-work-color);
+    --grid-area: work;
+  }
+  &--play {
+    --illustration-top: #{fn.px-to-rem(-4)};
+    --card-bg-color: var(--soft-blue-color);
+    --grid-area: play;
+  }
+  &--study {
+    --illustration-top: #{fn.px-to-rem(-6)};
+    --card-bg-color: var(--light-red-study-color);
+    --grid-area: study;
+  }
+  &--exercise {
+    --illustration-top: #{fn.px-to-rem(-2)};
+    --card-bg-color: var(--lime-green-color);
+    --grid-area: exercise;
+  }
+  &--social {
+    --illustration-top: #{fn.px-to-rem(-14)};
+    --card-bg-color: var(--violet-color);
+    --grid-area: social;
+  }
+  &--self-care {
+    --illustration-top: #{fn.px-to-rem(-10)};
+    --card-bg-color: var(--soft-orange-color);
+    --grid-area: self-care;
+  }
+
+  background-color: var(--card-bg-color);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  position: relative;
+  padding-top: fn.px-to-rem(38);
+  grid-area: var(--grid-area);
+
+  @media only screen and (min-width: rd.$expanded-layout-screen-size) {
+    --border-radius: #{fn.px-to-rem(15)};
+
+    &--work {
+      --illustration-top: #{fn.px-to-rem(-10)};
+    }
+
+    padding-top: fn.px-to-rem(45);
+  }
+
+  &__illustration {
+    position: absolute;
+    top: var(--illustration-top);
+    right: fn.px-to-rem(18);
+  }
+
+  &__content {
+    background-color: var(--neutral-color-600);
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+    padding: fn.px-to-rem(28) fn.px-to-rem(24);
+    display: flex;
+    flex-direction: column;
+    row-gap: fn.px-to-rem(6);
+    position: relative;
+    z-index: 2;
+    transition: background-color 0.5s ease-out;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--neutral-color-200);
+    }
+
+    @media only screen and (min-width: rd.$expanded-layout-screen-size) {
+      padding: fn.px-to-rem(28) fn.px-to-rem(30) fn.px-to-rem(32);
+    }
+  }
+
+  &__title-layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: fn.px-to-rem(6);
+
+    @media only screen and (min-width: rd.$expanded-layout-screen-size) {
+      margin-bottom: fn.px-to-rem(24);
+    }
+  }
+
+  &__title {
+    color: #fff;
+    font-weight: 400;
+    font-size: var(--font-size-base);
+  }
+
+  &__options-btn {
+    border: none;
+    background: none;
+    padding: 0;
+    line-height: 0;
+
+    svg {
+      transition: 0.3s;
+      fill: var(--neutral-color-50);
+    }
+    &:hover svg {
+      fill: #fff;
+    }
+  }
+
+  p {
+    margin: 0;
+    font-weight: 300;
+  }
+
+  &__duration-layout {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    @media only screen and (min-width: rd.$expanded-layout-screen-size) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: fn.px-to-rem(8);
+    }
+  }
+
+  &__duration {
+    font-size: var(--font-size-2xl);
+    color: #fff;
+
+    @media only screen and (min-width: rd.$expanded-layout-screen-size) {
+      font-size: fn.px-to-rem(56);
+    }
+  }
+
+  &__last-time {
+    font-size: var(--font-size-sm);
+    color: var(--neutral-color-50);
+  }
+}

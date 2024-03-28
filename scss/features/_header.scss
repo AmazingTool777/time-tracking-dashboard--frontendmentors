@@ -1,0 +1,99 @@
+@use "../functions" as fn;
+@use "../mixins";
+@use "../variables/responsive-design" as rd;
+
+.main-header {
+  background-color: var(--neutral-color-600);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  grid-area: main-header;
+
+  &__owner-card {
+    background-color: var(--blue-color);
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: fn.px-to-rem(16);
+    padding: fn.px-to-rem(32) fn.px-to-rem(28);
+    border-radius: var(--border-radius);
+
+    @media only screen and (min-width: rd.$expanded-layout-screen-size) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: fn.px-to-rem(40);
+      padding-top: fn.px-to-rem(34);
+      padding-bottom: fn.px-to-rem(82);
+    }
+  }
+
+  &__profile-img {
+    display: block;
+    width: fn.px-to-rem(70);
+    padding: 3px;
+    background-color: #fff;
+    clip-path: circle();
+
+    @include mixins.min-width-screen-media("md") {
+      width: fn.px-to-rem(77);
+    }
+    @media only screen and (min-width: rd.$expanded-layout-screen-size) {
+      width: fn.px-to-rem(84);
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &__title {
+    font-size: var(--font-size-sm);
+    font-weight: 300;
+    color: #fff;
+  }
+
+  &__username {
+    font-size: var(--font-size-xl);
+    margin-top: fn.px-to-rem(8);
+    display: block;
+
+    @include mixins.min-width-screen-media("md") {
+      margin-top: fn.px-to-rem(4);
+      font-size: fn.px-to-rem(40);
+    }
+  }
+
+  &__periods {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    margin: 0;
+    padding: fn.px-to-rem(24) 0;
+
+    @media only screen and (min-width: rd.$expanded-layout-screen-size) {
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: center;
+      padding: fn.px-to-rem(16) 0 fn.px-to-rem(22);
+    }
+  }
+
+  &__period {
+    text-decoration: none;
+    color: var(--neutral-color-50);
+    font-weight: 300;
+    font-size: var(--font-size-lg);
+    transition: all 400ms;
+
+    &:hover,
+    &.active {
+      color: #fff;
+    }
+
+    @media only screen and (min-width: rd.$expanded-layout-screen-size) {
+      display: block;
+      padding: fn.px-to-rem(10) fn.px-to-rem(32);
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+@use "../functions" as fn;
+
+$breakpoints: (
+  "sm": 640px,
+  "md": 768px,
+  "lg": 1024px,
+  "xl": 1280px,
+  "2xl": 1538px,
+);
+
+@function get-breakpoint-size($breakpoint) {
+  @return map-get($breakpoints, $breakpoint);
+}
+
+$expanded-layout-screen-size: 1168px;

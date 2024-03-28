@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Time tracking dashboard</title>
+    <link rel="stylesheet" href="css/index.css" />
+    <link
+      rel="shortcut icon"
+      href="assets/images/favicon-32x32.png"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <div class="main-content-centered">
+      <div class="main-content-container">
+        <div class="main-content-layout">
+          <!-- Main header -->
+          <header class="main-header">
+            <div class="main-header__owner-card">
+              <div class="main-header__profile-img">
+                <img src="assets/images/image-jeremy.png" alt="Jeremy Robson" />
+              </div>
+              <h1 class="main-header__title">
+                Report for
+                <span class="main-header__username">Jeremy Robson</span>
+              </h1>
+            </div>
+            <nav>
+              <ul class="main-header__periods">
+                <li><a href="#" class="main-header__period">Daily</a></li>
+                <li>
+                  <a href="#" class="main-header__period active">Weekly</a>
+                </li>
+                <li><a href="#" class="main-header__period">Monthly</a></li>
+              </ul>
+            </nav>
+          </header>
+          <!-- Work -->
+          <article class="activity-card activity-card--work">
+            <img
+              src="assets/images/icon-work.svg"
+              alt="Work"
+              class="activity-card__illustration"
+            />
+            <div class="activity-card__content">
+              <div class="activity-card__title-layout">
+                <h2 class="activity-card__title">Work</h2>
+                <button
+                  aria-label="Options"
+                  title="Options"
+                  class="activity-card__options-btn"
+                >
+                  <svg width="21" height="5">
+                    <use href="#ellipsis-path"></use>
+                  </svg>
+                </button>
+              </div>
+              <div class="activity-card__duration-layout">
+                <p class="activity-card__duration">32hrs</p>
+                <p class="activity-card__last-time">Last Week - 36hrs</p>
+              </div>
+            </div>
+          </article>
+          <!-- Play -->
+          <article class="activity-card activity-card--play">
+            <img
+              src="assets/images/icon-play.svg"
+              alt="Play"
+              class="activity-card__illustration"
+            />
+            <div class="activity-card__content">
+              <div class="activity-card__title-layout">
+                <h2 class="activity-card__title">Play</h2>
+                <button
+                  aria-label="Options"
+                  title="Options"
+                  class="activity-card__options-btn"
+                >
+                  <svg width="21" height="5">
+                    <use href="#ellipsis-path"></use>
+                  </svg>
+                </button>
+              </div>
+              <div class="activity-card__duration-layout">
+                <p class="activity-card__duration">10hrs</p>
+                <p class="activity-card__last-time">Last Week - 8hrs</p>
+              </div>
+            </div>
+          </article>
+          <!-- Study -->
+          <article class="activity-card activity-card--study">
+            <img
+              src="assets/images/icon-study.svg"
+              alt="Study"
+              class="activity-card__illustration"
+            />
+            <div class="activity-card__content">
+              <div class="activity-card__title-layout">
+                <h2 class="activity-card__title">Study</h2>
+                <button
+                  aria-label="Options"
+                  title="Options"
+                  class="activity-card__options-btn"
+                >
+                  <svg width="21" height="5">
+                    <use href="#ellipsis-path"></use>
+                  </svg>
+                </button>
+              </div>
+              <div class="activity-card__duration-layout">
+                <p class="activity-card__duration">4hrs</p>
+                <p class="activity-card__last-time">Last Week - 7hrs</p>
+              </div>
+            </div>
+          </article>
+          <!-- Exercise -->
+          <article class="activity-card activity-card--exercise">
+            <img
+              src="assets/images/icon-exercise.svg"
+              alt="Exercise"
+              class="activity-card__illustration"
+            />
+            <div class="activity-card__content">
+              <div class="activity-card__title-layout">
+                <h2 class="activity-card__title">Exercise</h2>
+                <button
+                  aria-label="Options"
+                  title="Options"
+                  class="activity-card__options-btn"
+                >
+                  <svg width="21" height="5">
+                    <use href="#ellipsis-path"></use>
+                  </svg>
+                </button>
+              </div>
+              <div class="activity-card__duration-layout">
+                <p class="activity-card__duration">4hrs</p>
+                <p class="activity-card__last-time">Last Week - 5hrs</p>
+              </div>
+            </div>
+          </article>
+          <!-- Social -->
+          <article class="activity-card activity-card--social">
+            <img
+              src="assets/images/icon-social.svg"
+              alt="Social"
+              class="activity-card__illustration"
+            />
+            <div class="activity-card__content">
+              <div class="activity-card__title-layout">
+                <h2 class="activity-card__title">Social</h2>
+                <button
+                  aria-label="Options"
+                  title="Options"
+                  class="activity-card__options-btn"
+                >
+                  <svg width="21" height="5">
+                    <use href="#ellipsis-path"></use>
+                  </svg>
+                </button>
+              </div>
+              <div class="activity-card__duration-layout">
+                <p class="activity-card__duration">5hrs</p>
+                <p class="activity-card__last-time">Last Week - 10hrs</p>
+              </div>
+            </div>
+          </article>
+          <!-- Self care -->
+          <article class="activity-card activity-card--self-care">
+            <img
+              src="assets/images/icon-self-care.svg"
+              alt="Self care"
+              class="activity-card__illustration"
+            />
+            <div class="activity-card__content">
+              <div class="activity-card__title-layout">
+                <h2 class="activity-card__title">Self care</h2>
+                <button
+                  aria-label="Options"
+                  title="Options"
+                  class="activity-card__options-btn"
+                >
+                  <svg width="21" height="5">
+                    <use href="#ellipsis-path"></use>
+                  </svg>
+                </button>
+              </div>
+              <div class="activity-card__duration-layout">
+                <p class="activity-card__duration">2hrs</p>
+                <p class="activity-card__last-time">Last Week - 2hrs</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </body>
+  <!-- Ellipsis SVG with symbol -->
+  <svg style="display: none" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="ellipsis-path">
+      <path
+        d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
+        fill-rule="evenodd"
+      />
+    </symbol>
+  </svg>
+</html>

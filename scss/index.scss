@@ -1,0 +1,116 @@
+@forward "./sanitize";
+@forward "./features/index";
+
+@use "./variables/colors" as colors;
+@use "./variables/typography" as typography;
+@use "./variables/effects" as effects;
+@use "./functions" as fn;
+@use "./variables/responsive-design" as rd;
+@use "./mixins";
+
+:root {
+  // Primary colors
+  --soft-blue-color: #{map-get($map: colors.$primary-colors, $key: "soft-blue")};
+  --blue-color: #{map-get($map: colors.$primary-colors, $key: "blue")};
+  --light-red-work-color: #{map-get(
+      $map: colors.$primary-colors,
+      $key: "light-red-work"
+    )};
+  --light-red-study-color: #{map-get(
+      $map: colors.$primary-colors,
+      $key: "light-red-study"
+    )};
+  --lime-green-color: #{map-get(
+      $map: colors.$primary-colors,
+      $key: "lime-green"
+    )};
+  --violet-color: #{map-get($map: colors.$primary-colors, $key: "violet")};
+  --soft-orange-color: #{map-get(
+      $map: colors.$primary-colors,
+      $key: "soft-orange"
+    )};
+
+  // Neutral colors
+  --neutral-color-50: #{map-get($map: colors.$neutral-colors, $key: "pale-blue")};
+  --neutral-color-200: #{map-get(
+      $map: colors.$neutral-colors,
+      $key: "desaturated-blue"
+    )};
+  --neutral-color-600: #{map-get(
+      $map: colors.$neutral-colors,
+      $key: "dark-blue"
+    )};
+  --neutral-color-700: #{map-get(
+      $map: colors.$neutral-colors,
+      $key: "very-dark-blue"
+    )};
+
+  // Font sizes
+  --font-size-base: #{fn.px-to-rem(typography.$font-size-base-px)};
+  --font-size-sm: #{fn.px-to-rem(typography.$font-size-sm-px)};
+  --font-size-lg: #{fn.px-to-rem(typography.$font-size-lg-px)};
+  --font-size-xl: #{fn.px-to-rem(typography.$font-size-xl-px)};
+  --font-size-2xl: #{fn.px-to-rem(typography.$font-size-2xl-px)};
+
+  // Effects
+  --border-radius: #{effects.$border-radius};
+
+  font-size: #{typography.$font-size-base-px}px;
+}
+
+@font-face {
+  font-family: "Rubik";
+  src: url("../assets/fonts/Rubik/Rubik-VariableFont_wght.ttf");
+  font-weight: 300 500;
+  font-style: normal;
+}
+
+body {
+  background-color: var(--neutral-color-700);
+  font-family: Rubik;
+}
+
+.main-content-centered {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  align-content: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.main-content-container {
+  padding: fn.px-to-rem(81) fn.px-to-rem(24);
+  width: 100%;
+  max-width: fn.px-to-rem(480);
+  margin: auto;
+
+  @include mixins.min-width-screen-media("md") {
+    max-width: fn.px-to-rem(780);
+  }
+  @media only screen and (min-width: rd.$expanded-layout-screen-size) {
+    max-width: fn.px-to-rem(1168);
+  }
+}
+
+.main-content-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(auto);
+  grid-template-areas: "main-header" "work" "play" "study" "exercise" "social" "self-care";
+  gap: fn.px-to-rem(24);
+  justify-content: center;
+
+  @include mixins.min-width-screen-media("md") {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(auto);
+    grid-template-areas: "main-header main-header" "work play" "study exercise" "social self-care";
+    gap: fn.px-to-rem(30);
+  }
+  @media only screen and (min-width: rd.$expanded-layout-screen-size) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(auto);
+    grid-template-areas: "main-header work play study" "main-header exercise social self-care";
+  }
+}

@@ -1,0 +1,6 @@
+@use "sass:math";
+@use "./variables/typography" as typography;
+
+@function px-to-rem($px) {
+  @return #{math.div($px, typography.$font-size-base-px)}rem;
+}
