@@ -10,7 +10,7 @@ Here is a desktop screenshot of the web page solution that I built.
 
 ## Live URL
 
-You can view the deployed version of the solution [here](https://lordseven777.github.io/time-tracking-dashboard--frontendmentors/).
+You can view the deployed version of the solution [here](https://AmazingTool777.github.io/time-tracking-dashboard--frontendmentors/).
 
 ## My thoughts
 
